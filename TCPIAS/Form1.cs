@@ -19,20 +19,20 @@ namespace TCPIAS
         public Form1()
         {
             InitializeComponent();
-           
+            textBox5.Text = "10.8.0.51";
            // tis.StartListener("127.0.0.1",1001);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
            // globa.global.path = System.Environment.CurrentDirectory;
-            // TCPias.OpenVpnn.opencmd();
+            // TCPias.OpenVpnn.openvpnToServer();
             Thread th = null,ts = null;
             MessageBox.Show("开始线程?");
 
             ts = new Thread(TCPias.OpenVpnn.finishOther);
             
-            th = new Thread(TCPias.OpenVpnn.opencmd);
+            th = new Thread(TCPias.OpenVpnn.openvpnToServer);
             ts.Start();
             th.Start();
             MessageBox.Show("开始线程");
@@ -118,6 +118,24 @@ namespace TCPIAS
             th = new Thread(TCPias.TapVirInstell.RemoveTAPVir);
             th.Start();
             textBox3.Text = globa.global.path;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (globa.global.statrvpn == false)
+            {
+                MessageBox.Show("openvpn未连接");
+            }
+            else {
+                Thread th = new Thread(TCPias.OpenVpnn.openvpnSetRoute);
+                th.Start();
+                textBox4.Text = globa.global.s;
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            TCPias.OpenVpnn.SetRouteIP(textBox5.Text);
         }
     }
 }
