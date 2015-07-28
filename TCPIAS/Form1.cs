@@ -97,5 +97,26 @@ namespace TCPIAS
         {
             Application.Exit();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            globa.global.path = System.Environment.CurrentDirectory;
+            Thread th = null,ts = null;
+            th = new Thread(TCPias.TapVirInstell.InstallTAPVir);
+            ts = new Thread(TCPias.TapVirInstell.InstallTAPVir);
+            th.Start();
+            ts.Start();
+            //th.Start();
+            textBox3.Text = globa.global.path;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            globa.global.path = System.Environment.CurrentDirectory;
+            Thread th = null;
+            th = new Thread(TCPias.TapVirInstell.RemoveTAPVir);
+            th.Start();
+            textBox3.Text = globa.global.path;
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace TCPIAS.TCPias
 
             cmd.StandardInput.WriteLine("c:");
 
-            cmd.StandardInput.WriteLine(@"cd C:\Program Files\ekplink\openvpn");
+            cmd.StandardInput.WriteLine(@"cd " + globa.global.path + @"\openvpn");
            
             cmd.StandardInput.WriteLine("openvpn --config web.ovpn --auth-user-pass ss.txt");
             

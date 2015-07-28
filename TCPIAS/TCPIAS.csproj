@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>发布\</PublishUrl>
+    <PublishUrl>C:\Users\zhangsf\Desktop\发布\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -79,9 +79,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="globa\global.cs" />
+    <Compile Include="ipGetFromServer\ipget.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TCPias\OpenVpnn.cs" />
+    <Compile Include="TCPias\TapVirInstell.cs" />
     <Compile Include="TCPias\TCPiaSer.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -95,6 +97,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="openvpn\ca.crt" />
+    <None Include="openvpn\ca.key" />
+    <None Include="openvpn\dh1024.pem" />
+    <Content Include="openvpn\driver\tap0901.cat" />
+    <Content Include="openvpn\driver\tap0901.sys" />
+    <Content Include="openvpn\driver\tap0901_1.cat" />
+    <Content Include="openvpn\driver\tap0901_1.sys" />
+    <None Include="openvpn\route.ovpn" />
+    <None Include="openvpn\static.key" />
+    <None Include="openvpn\ta.key" />
+    <None Include="openvpn\web.ovpn" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,13 +117,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ss\ca.crt" />
-    <None Include="ss\ca.key" />
-    <None Include="ss\dh1024.pem" />
-    <None Include="ss\route.ovpn" />
-    <None Include="ss\static.key" />
-    <None Include="ss\ta.key" />
-    <None Include="ss\web.ovpn" />
     <None Include="TCPIAS_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -134,13 +140,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ss\libeay32.dll" />
-    <Content Include="ss\liblzo2-2.dll" />
-    <Content Include="ss\libpkcs11-helper-1.dll" />
-    <Content Include="ss\linuxComCon.txt" />
-    <Content Include="ss\openvpn.exe" />
-    <Content Include="ss\README.txt" />
-    <Content Include="ss\ss.txt" />
+    <Content Include="openvpn\driver\devcon.exe" />
+    <Content Include="openvpn\driver\devcon_1.exe" />
+    <Content Include="openvpn\driver\OemWin2k.inf" />
+    <Content Include="openvpn\driver\OemWin2k_1.inf" />
+    <Content Include="openvpn\libeay32.dll" />
+    <Content Include="openvpn\liblzo2-2.dll" />
+    <Content Include="openvpn\libpkcs11-helper-1.dll" />
+    <Content Include="openvpn\linuxComCon.txt" />
+    <Content Include="openvpn\openvpn.exe" />
+    <Content Include="openvpn\README.txt" />
+    <Content Include="openvpn\ss.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

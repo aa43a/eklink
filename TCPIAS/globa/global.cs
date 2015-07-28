@@ -10,6 +10,7 @@ namespace TCPIAS.globa
     {
         public static bool statrvpn = false;
         public static string s = "";
+        public static string path = "";
 
     }
 }
