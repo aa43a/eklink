@@ -25,7 +25,8 @@ namespace TCPIAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-             // TCPias.OpenVpnn.opencmd();
+           // globa.global.path = System.Environment.CurrentDirectory;
+            // TCPias.OpenVpnn.opencmd();
             Thread th = null,ts = null;
             MessageBox.Show("开始线程?");
 
@@ -100,7 +101,7 @@ namespace TCPIAS
 
         private void button5_Click(object sender, EventArgs e)
         {
-            globa.global.path = System.Environment.CurrentDirectory;
+          //  globa.global.path = System.Environment.CurrentDirectory;
             Thread th = null,ts = null;
             th = new Thread(TCPias.TapVirInstell.InstallTAPVir);
             ts = new Thread(TCPias.TapVirInstell.InstallTAPVir);
@@ -112,7 +113,7 @@ namespace TCPIAS
 
         private void button6_Click(object sender, EventArgs e)
         {
-            globa.global.path = System.Environment.CurrentDirectory;
+         //   globa.global.path = System.Environment.CurrentDirectory;
             Thread th = null;
             th = new Thread(TCPias.TapVirInstell.RemoveTAPVir);
             th.Start();

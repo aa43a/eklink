@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -97,17 +97,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="openvpn\ca.crt" />
-    <None Include="openvpn\ca.key" />
-    <None Include="openvpn\dh1024.pem" />
+    <Content Include="openvpn\ca.crt" />
+    <Content Include="openvpn\ca.key" />
+    <Content Include="openvpn\dh1024.pem" />
     <Content Include="openvpn\driver\tap0901.cat" />
     <Content Include="openvpn\driver\tap0901.sys" />
     <Content Include="openvpn\driver\tap0901_1.cat" />
     <Content Include="openvpn\driver\tap0901_1.sys" />
-    <None Include="openvpn\route.ovpn" />
-    <None Include="openvpn\static.key" />
-    <None Include="openvpn\ta.key" />
-    <None Include="openvpn\web.ovpn" />
+    <Content Include="openvpn\route.ovpn" />
+    <Content Include="openvpn\static.key" />
+    <Content Include="openvpn\ta.key" />
+    <Content Include="openvpn\web.ovpn" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

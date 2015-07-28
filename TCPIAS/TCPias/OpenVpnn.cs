@@ -103,6 +103,7 @@ namespace TCPIAS.TCPias
                     p.Kill();
                 }
             }
+            globa.global.statrvpn = false;
         }
 
         public static string GetIP(){
