@@ -17,7 +17,8 @@ namespace TCPIAS.TCPias
         }
     
         public static void openvpnToServer()
-        {           
+        {
+           
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
 
@@ -146,7 +147,7 @@ namespace TCPIAS.TCPias
                          globa.global.statrvpn = true;
                      }
                  }
-                 Console.WriteLine(globa.global.statrvpn);
+                 Console.WriteLine(globa.global.statrvpn+"  hello.");
                      foreach (Process p in Process.GetProcesses())
                      {
                          if (con != 0)
@@ -195,6 +196,10 @@ namespace TCPIAS.TCPias
             //System.Net.IPHostEntry ipHost = System.Net.Dns.Resolve(System.Net.Dns.GetHostName());
             //System.Net.IPAddress ipAddr = ipHost.AddressList[0];
             //return ipAddr.ToString();
+        }
+
+        public static string showMessage() {
+            return globa.global.s;
         }
     }
 }
