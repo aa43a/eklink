@@ -150,6 +150,7 @@ namespace TCPIAS.TCPias
                  Console.WriteLine(globa.global.statrvpn+"  hello.");
                      foreach (Process p in Process.GetProcesses())
                      {
+                    
                          if (con != 0)
                          {
                              //Console.WriteLine(p.ProcessName);
