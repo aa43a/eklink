@@ -21,6 +21,7 @@ namespace TCPIAS
             InitializeComponent();
             textBox5.Text = "10.8.0.51";
             MessConnect.MemGet.StartMemCa();
+            checklink();
             // tis.StartListener("127.0.0.1",1001);
         }
 
@@ -151,6 +152,7 @@ namespace TCPIAS
         private void timer1_Tick(object sender, EventArgs e)
         {        
                 textBox3.Text = TCPias.OpenVpnn.showMessage();     
+            
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -161,6 +163,36 @@ namespace TCPIAS
         private void button10_Click(object sender, EventArgs e)
         {
             textBox8.Text = MessConnect.MemGet.MemcacheGet(textBox9.Text);
+        }
+        private int count = 0;
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            checklink();
+        }
+
+        private void checklink() {
+            foreach (Process p in Process.GetProcesses())
+            {
+
+                if (p.ProcessName == "openvpn")
+                {
+                    count++;
+
+                }
+            }
+            if (count == 1)
+            {
+                textBox1.Text = "openvpn已连接至115";
+            }
+            else if (count == 2)
+            {
+                textBox1.Text = "openvpn已连接至115\n route 已连接至route";
+            }
+            else
+            {
+                textBox1.Text = "未连接";
+            }
+            count = 0;
         }
     }
 }
