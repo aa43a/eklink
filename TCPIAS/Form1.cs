@@ -20,8 +20,8 @@ namespace TCPIAS
         {
             InitializeComponent();
             textBox5.Text = "10.8.0.51";
-           
-           // tis.StartListener("127.0.0.1",1001);
+            MessConnect.MemGet.StartMemCa();
+            // tis.StartListener("127.0.0.1",1001);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -94,6 +94,7 @@ namespace TCPIAS
         private void button4_Click(object sender, EventArgs e)
         {
             textBox2.Text = TCPias.OpenVpnn.GetIP();
+            //
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -145,16 +146,21 @@ namespace TCPIAS
         private void button8_Click(object sender, EventArgs e)
         {
             TCPias.OpenVpnn.SetRouteIP(textBox5.Text);
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
+        }      
 
         private void timer1_Tick(object sender, EventArgs e)
         {        
                 textBox3.Text = TCPias.OpenVpnn.showMessage();     
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            MessConnect.MemGet.MemcacheSet(textBox6.Text,textBox7.Text);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox8.Text = MessConnect.MemGet.MemcacheGet(textBox9.Text);
         }
     }
 }

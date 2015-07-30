@@ -79,7 +79,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="globa\global.cs" />
-    <Compile Include="ipGetFromServer\ipget.cs" />
+    <Compile Include="MessConnect\ipget.cs" />
+    <Compile Include="MessConnect\MemGet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TCPias\OpenVpnn.cs" />
@@ -152,6 +153,12 @@
     <Content Include="openvpn\openvpn.exe" />
     <Content Include="openvpn\README.txt" />
     <Content Include="openvpn\ss.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\memc\BeITMemcached.csproj">
+      <Project>{b09b6f90-7af4-43be-8c02-e36ab2487a98}</Project>
+      <Name>BeITMemcached</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+
 namespace TCPIAS.TCPias
 {
     class OpenVpnn
@@ -19,6 +20,7 @@ namespace TCPIAS.TCPias
         public static void openvpnToServer()
         {
            
+            
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
 
@@ -45,7 +47,7 @@ namespace TCPIAS.TCPias
             {
 
                 Console.WriteLine(reader.ReadLine());
-                globa.global.s += line;
+                globa.global.s += line+"\n";
                 line = reader.ReadLine();
                 
 
@@ -87,7 +89,7 @@ namespace TCPIAS.TCPias
             {
 
                 Console.WriteLine(reader.ReadLine());
-                globa.global.s += line;
+                globa.global.s += line+"\n";
                 line = reader.ReadLine();
 
 
