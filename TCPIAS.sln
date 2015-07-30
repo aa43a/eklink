@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPIAS", "TCPIAS\TCPIAS.csproj", "{E810B703-8DB3-4025-987B-5127FD246743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeITMemcached", "C:\Users\zhangsf\Desktop\memc\BeITMemcached.csproj", "{B09B6F90-7AF4-43BE-8C02-E36AB2487A98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{E810B703-8DB3-4025-987B-5127FD246743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E810B703-8DB3-4025-987B-5127FD246743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E810B703-8DB3-4025-987B-5127FD246743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B09B6F90-7AF4-43BE-8C02-E36AB2487A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B09B6F90-7AF4-43BE-8C02-E36AB2487A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B09B6F90-7AF4-43BE-8C02-E36AB2487A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B09B6F90-7AF4-43BE-8C02-E36AB2487A98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,20 +19,22 @@ namespace TCPIAS
         public Form1()
         {
             InitializeComponent();
+            textBox5.Text = "10.8.0.51";
            
            // tis.StartListener("127.0.0.1",1001);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // globa.global.path = System.Environment.CurrentDirectory;
-            // TCPias.OpenVpnn.opencmd();
+            globa.global.s = "";
+            // globa.global.path = System.Environment.CurrentDirectory;
+            // TCPias.OpenVpnn.openvpnToServer();
             Thread th = null,ts = null;
             MessageBox.Show("开始线程?");
 
             ts = new Thread(TCPias.OpenVpnn.finishOther);
             
-            th = new Thread(TCPias.OpenVpnn.opencmd);
+            th = new Thread(TCPias.OpenVpnn.openvpnToServer);
             ts.Start();
             th.Start();
             MessageBox.Show("开始线程");
@@ -53,7 +55,7 @@ namespace TCPIAS
 
              start.Arguments = txtCommand.Text;//设置命令参数
 
-            start.CreateNoWindow = false;//不显示dos命令行窗口
+            start.CreateNoWindow = true;//不显示dos命令行窗口
 
             start.RedirectStandardOutput = true;//
 
@@ -117,7 +119,42 @@ namespace TCPIAS
             Thread th = null;
             th = new Thread(TCPias.TapVirInstell.RemoveTAPVir);
             th.Start();
-            textBox3.Text = globa.global.path;
+            textBox2.Text = globa.global.path;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            globa.global.s = "";
+            if (!globa.global.statrvpn)
+            {
+              //  MessageBox.Show("openvpn未连接");
+                Thread ts = new Thread(TCPias.OpenVpnn.openvpnToServer);
+                Thread th = new Thread(TCPias.OpenVpnn.openvpnSetRoute);
+                ts.Start();
+                globa.global.statrvpn = true;
+                th.Start();
+                textBox2.Text = globa.global.s;
+            }
+            else {
+                Thread th = new Thread(TCPias.OpenVpnn.openvpnSetRoute);
+                th.Start();
+                textBox4.Text = globa.global.s;
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            TCPias.OpenVpnn.SetRouteIP(textBox5.Text);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {        
+                textBox3.Text = TCPias.OpenVpnn.showMessage();     
         }
     }
 }
