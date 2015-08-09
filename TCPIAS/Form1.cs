@@ -22,6 +22,7 @@ namespace TCPIAS
             textBox5.Text = "10.8.0.51";
             MessConnect.MemGet.StartMemCa();
             checklink();
+            //Console.WriteLine(TCPias.GetIP.IsRightIP("10.8.0.6"));
             // tis.StartListener("127.0.0.1",1001);
         }
 

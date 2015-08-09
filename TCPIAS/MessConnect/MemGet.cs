@@ -27,17 +27,28 @@ namespace TCPIAS.MessConnect
         }
 
         public static string MemcacheGet(string value) {
+            string[] h = new string[4];
             try
             {
+                //ulong unique;
                 Console.WriteLine(cache.Get(value) as string + "11");
-                
+                string s = cache.Get(value) as string;
+                h[0] = s.Split('.')[0].Split('"')[1];
+                h[1] = s.Split('.')[1];
+                h[2] = s.Split('.')[2];
+                h[3] = s.Split('.')[3].Split('"')[0];
+
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                return cache.Get(value) as string;
             }
-           
-            return cache.Get(value) as string;
+
+
+
+
+            return h[0]+"."+h[1]+ "." + h[2]+ "." + h[3];     
             
         }
 

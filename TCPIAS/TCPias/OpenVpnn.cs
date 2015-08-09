@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -184,21 +185,43 @@ namespace TCPIAS.TCPias
             finishOther();
         }
 
-        public static string GetIP(){
+        public static string GetIP()
+        {
 
-            System.Net.IPHostEntry IpEntry = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
-            for (int i = 0; i != IpEntry.AddressList.Length; i++)
-            {
-                if (IpEntry.AddressList[i].AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-                {
-                    return IpEntry.AddressList[i].ToString();
-                }
-            }
-            return "IP获取失败";
-
+            //System.Net.IPHostEntry IpEntry = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
+            //for (int i = 0; i != IpEntry.AddressList.Length; i++)
+            //{
+            //    if (IpEntry.AddressList[i].AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            //    {
+            //        return IpEntry.AddressList[i].ToString();
+            //    }
+            //}
+            //return "IP获取失败";
+            //System.Net.IPAddress addr;
+            //addr = new System.Net.IPAddress(Dns.GetHostByName(Dns.GetHostName()).AddressList[0].Address);
+            //return addr.ToString();
             //System.Net.IPHostEntry ipHost = System.Net.Dns.Resolve(System.Net.Dns.GetHostName());
             //System.Net.IPAddress ipAddr = ipHost.AddressList[0];
             //return ipAddr.ToString();
+
+            string tempip = "";
+            try
+            {
+                WebRequest wr = WebRequest.Create("http://www.ip138.com/ip2city.asp");
+                Stream s = wr.GetResponse().GetResponseStream();
+                StreamReader sr = new StreamReader(s, Encoding.Default);
+                string all = sr.ReadToEnd(); //读取网站的数据
+
+                int start = all.IndexOf("[") + 1;
+                int end = all.IndexOf("]", start);
+                tempip = all.Substring(start, end - start);
+                sr.Close();
+                s.Close();
+            }
+            catch
+            {
+            }
+            return tempip;
         }
 
         public static string showMessage() {

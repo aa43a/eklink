@@ -182,7 +182,6 @@
             // 
             // textBox5
             // 
-            this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(510, 68);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";

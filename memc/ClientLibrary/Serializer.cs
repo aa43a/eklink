@@ -33,7 +33,7 @@ namespace BeIT.MemCached
 	{
 		ByteArray	= 0,
 		Object		= 1,
-		String		= 2,
+		String		= 32,
 		Datetime	= 3,
 		Bool		= 4,
 		//SByte		= 5, //Makes no sense.
