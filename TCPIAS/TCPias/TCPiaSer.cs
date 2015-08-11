@@ -22,13 +22,13 @@ namespace TCPIAS.TCPias
             client =this.client;
         }
 
-        public void StartListener(string ip,int port) {
-            socket = new Socket(SocketType.Stream,ProtocolType.Tcp);
-            listener = new TcpListener(new IPEndPoint(IPAddress.Parse(ip), port));
-            listener.Start(); 
-            listener.BeginAcceptSocket(clientConnect, listener);
+        //public void StartListener(string ip,int port) {
+        //    socket = new Socket(SocketType.Stream,ProtocolType.Tcp);
+        //    listener = new TcpListener(new IPEndPoint(IPAddress.Parse(ip), port));
+        //    listener.Start(); 
+        //    listener.BeginAcceptSocket(clientConnect, listener);
             
-        }
+        //}
 
         private void clientConnect(IAsyncResult ar) {
             try
